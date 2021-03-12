@@ -11,9 +11,11 @@
 namespace DRCData;
 
 
-class Ville
+class Ville extends Data
 {
     public function __construct()
     {
+        parent::__construct();
+        $this->datas = $this->importer->villes();
     }
 }
