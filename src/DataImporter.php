@@ -32,14 +32,29 @@ class DataImporter
         $territoiresFile = file_get_contents('../data/territoires.json');
         $territoires = json_decode($territoiresFile, true);
 
-        return $territoires['pcode_territoire'] ?? [];
+        return $territoires ?? [];
     }
 
-    public function zone_santes()
+    /**
+     * @return array
+     */
+    public function zone_santes(): array
     {
         $zonesFile = file_get_contents('../data/zonesante_pop2020.json');
         $zones = json_decode($zonesFile, true);
 
-        return $zones['zs_pop_2k20'];
+        return $zones ?? [];
     }
+
+    /**
+     * @return array
+     */
+    public function villes(): array
+    {
+        $villesFile = file_get_contents('../data/villes.json');
+        $villes = json_decode($villesFile, true);
+
+        return $villes ?? [];
+    }
+
 }
