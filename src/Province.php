@@ -27,12 +27,12 @@ class Province
     /**
      * @return array
      */
-    public function list(): array
+    public function getAll(): array
     {
         return $this->provinces;
     }
 
-    public function getProvinceById(int $id): ?StdClass
+    public function getById(int $id): ?StdClass
     {
         foreach ($this->provinces as $province) {
             if ($province->id === $id) {
