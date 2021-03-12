@@ -11,6 +11,7 @@
 namespace DRCData;
 
 
+use DRCData\Utils\Text;
 use stdClass;
 
 class Province
@@ -62,9 +63,48 @@ class Province
         return null;
     }
 
-
+    /**
+     * @return stdClass
+     */
     public function random(): StdClass
     {
         return $this->provinces[rand(0, count($this->provinces))];
+    }
+
+    /**
+     * @param string $name
+     * @param bool $isCaseInsensitive
+     * @param bool $withAccent
+     * @return array
+     */
+    public function search(string $name,bool $isCaseInsensitive = true, bool $withAccent = true): array
+    {
+        $provinces = [];
+
+        if ($withAccent === true) {
+            $name = Text::replaceAccents($name);
+        }
+
+        if ($isCaseInsensitive === true) {
+            $name = mb_strtolower($name);
+        }
+
+        foreach ($this->provinces as $province) {
+            $province_name = $province->name;
+
+            if ($withAccent === true) {
+                $province_name = Text::replaceAccents($province_name);
+            }
+
+            if ($isCaseInsensitive === true) {
+                $province_name = mb_strtolower($province_name);
+            }
+
+            if (strpos($province_name, $name) !== false) {
+                $provinces[] = $province;
+            }
+        }
+
+        return $provinces;
     }
 }
