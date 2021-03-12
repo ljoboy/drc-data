@@ -18,4 +18,19 @@ class Territoire extends Data
         parent::__construct();
         $this->datas = $this->importer->territoires();
     }
+
+    /**
+     * @param int $province_id
+     * @return array
+     */
+    public function byProvinceId(int $province_id): array
+    {
+        $territoires = [];
+        foreach ($this->datas as $data) {
+            if ($data->province_id === $province_id) {
+                $territoires[] = $data;
+            }
+        }
+        return $territoires;
+    }
 }
