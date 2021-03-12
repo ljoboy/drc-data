@@ -34,4 +34,12 @@ class DataImporter
 
         return $territoires['pcode_territoire'] ?? [];
     }
+
+    public function zone_santes()
+    {
+        $zonesFile = file_get_contents('../data/zonesante_pop2020.json');
+        $zones = json_decode($zonesFile, true);
+
+        return $zones['zs_pop_2k20'];
+    }
 }
