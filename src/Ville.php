@@ -18,4 +18,19 @@ class Ville extends Data
         parent::__construct();
         $this->datas = $this->importer->villes();
     }
+
+    /**
+     * @param int $province_id
+     * @return array
+     */
+    public function byProvinceId(int $province_id): array
+    {
+        $villes = [];
+        foreach ($this->datas as $data) {
+            if ($data->province_id === $province_id) {
+                $villes[] = $data;
+            }
+        }
+        return $villes;
+    }
 }
