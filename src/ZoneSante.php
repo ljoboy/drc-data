@@ -19,5 +19,14 @@ class ZoneSante extends Data
         $this->datas = $this->importer->zone_santes();
     }
 
-
+    public function byProvinceName(string $province_name): array
+    {
+        $zones = [];
+        foreach ($this->datas as $data) {
+            if ($data->province === $province_name) {
+                $zones[] = $data;
+            }
+        }
+        return $zones;
+    }
 }
