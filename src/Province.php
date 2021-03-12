@@ -63,5 +63,8 @@ class Province
     }
 
 
-
+    public function random(): StdClass
+    {
+        return $this->provinces[rand(0, count($this->provinces))];
+    }
 }
