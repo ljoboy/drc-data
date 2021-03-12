@@ -11,6 +11,8 @@
 namespace DRCData;
 
 
+use stdClass;
+
 class Province
 {
     private $provinces;
@@ -28,5 +30,14 @@ class Province
     public function list(): array
     {
         return $this->provinces;
+    }
+
+    public function getProvinceById(int $id): StdClass
+    {
+        foreach ($this->provinces as $province) {
+            if ($province->id === $id) {
+                return $province;
+            }
+        }
     }
 }
