@@ -11,9 +11,11 @@
 namespace DRCData;
 
 
-class Territoire
+class Territoire extends Data
 {
     public function __construct()
     {
+        parent::__construct();
+        $this->datas = $this->importer->territoires();
     }
 }
