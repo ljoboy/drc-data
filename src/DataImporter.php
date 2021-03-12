@@ -14,14 +14,21 @@ namespace DRCData;
 class DataImporter
 {
     /**
+     * @param string $filename
+     * @return array
+     */
+    private function importer(string $filename): array
+    {
+        $file_contents = file_get_contents("../data/$filename.json");
+        return json_decode($file_contents, true);
+    }
+
+    /**
      * @return array
      */
     public function provinces(): array
     {
-        $provincesFile = file_get_contents('../data/provinces.json');
-        $provinces = json_decode($provincesFile, true);
-
-        return $provinces['administrative'] ?? [];
+        return $this->importer('provinces');
     }
 
     /**
@@ -29,10 +36,7 @@ class DataImporter
      */
     public function territoires(): array
     {
-        $territoiresFile = file_get_contents('../data/territoires.json');
-        $territoires = json_decode($territoiresFile, true);
-
-        return $territoires ?? [];
+        return $this->importer('territoires');
     }
 
     /**
@@ -40,10 +44,7 @@ class DataImporter
      */
     public function zone_santes(): array
     {
-        $zonesFile = file_get_contents('../data/zonesante_pop2020.json');
-        $zones = json_decode($zonesFile, true);
-
-        return $zones ?? [];
+        return $this->importer('zonesante_pop2020');
     }
 
     /**
@@ -51,10 +52,7 @@ class DataImporter
      */
     public function villes(): array
     {
-        $villesFile = file_get_contents('../data/villes.json');
-        $villes = json_decode($villesFile, true);
-
-        return $villes ?? [];
+        return $this->importer('villes');
     }
 
 }
