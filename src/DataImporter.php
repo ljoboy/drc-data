@@ -20,7 +20,7 @@ class DataImporter
     private function importer(string $filename): array
     {
         $file_contents = file_get_contents("../data/$filename.json");
-        return json_decode($file_contents, true);
+        return json_decode($file_contents, false);
     }
 
     /**
