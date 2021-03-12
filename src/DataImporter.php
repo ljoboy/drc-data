@@ -13,5 +13,11 @@ namespace DRCData;
 
 class DataImporter
 {
+    public function provinces(): array
+    {
+        $provincesFile = file_get_contents('../data/provinces.json');
+        $provinces = json_decode($provincesFile, true);
 
+        return $provinces['administrative'] ?? [];
+    }
 }
