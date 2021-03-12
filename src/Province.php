@@ -13,7 +13,12 @@ namespace DRCData;
 
 class Province
 {
+    public $provinces;
+    private $importer;
+
     public function __construct()
     {
+        $this->importer = new DataImporter();
+        $this->provinces = $this->importer->provinces();
     }
 }
