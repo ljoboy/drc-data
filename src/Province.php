@@ -32,10 +32,29 @@ class Province
         return $this->provinces;
     }
 
+    /**
+     * @param int $id
+     * @return stdClass|null
+     */
     public function getById(int $id): ?StdClass
     {
         foreach ($this->provinces as $province) {
             if ($province->id === $id) {
+                return $province;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * @param string $name
+     * @return stdClass|null
+     */
+    public function getByName(string $name): ?StdClass
+    {
+        foreach ($this->provinces as $province) {
+            if ($province->name === $name) {
                 return $province;
             }
         }
