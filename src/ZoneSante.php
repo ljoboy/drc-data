@@ -11,6 +11,8 @@
 namespace DRCData;
 
 
+use DRCData\Utils\Text;
+
 class ZoneSante extends Data
 {
     public function __construct()
@@ -22,8 +24,13 @@ class ZoneSante extends Data
     public function byProvinceName(string $province_name): array
     {
         $zones = [];
+        $province_name = mb_strtolower(Text::replaceAccents($province_name));
+
         foreach ($this->datas as $data) {
-            if ($data->province === $province_name) {
+
+            $name = mb_strtolower(Text::replaceAccents($data->province));
+
+            if ($name === $province_name) {
                 $zones[] = $data;
             }
         }
