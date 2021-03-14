@@ -26,6 +26,8 @@ class Province extends Data
     }
 
     /**
+     * get province's by id
+     *
      * @param int $id
      * @return stdClass|null
      */

@@ -17,6 +17,8 @@ namespace DRCData;
 class DataImporter
 {
     /**
+     * Import data from file and return it like an array of Object
+     *
      * @param string $filename
      * @return array
      */
@@ -27,6 +29,8 @@ class DataImporter
     }
 
     /**
+     * import provinces data
+     *
      * @return array
      */
     public function provinces(): array
@@ -35,6 +39,8 @@ class DataImporter
     }
 
     /**
+     * import territoires data
+     *
      * @return array
      */
     public function territoires(): array
@@ -43,6 +49,8 @@ class DataImporter
     }
 
     /**
+     * import zone de sante's data
+     *
      * @return array
      */
     public function zone_santes(): array
@@ -51,6 +59,8 @@ class DataImporter
     }
 
     /**
+     * import villes data
+     *
      * @return array
      */
     public function villes(): array

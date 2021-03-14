@@ -34,6 +34,8 @@ abstract class Data
     }
 
     /**
+     * get all datas
+     *
      * @return array
      */
     public function getAll(): array
@@ -42,6 +44,8 @@ abstract class Data
     }
 
     /**
+     * get data by name
+     *
      * @param string $name
      * @return stdClass|null
      */
@@ -57,6 +61,8 @@ abstract class Data
     }
 
     /**
+     * get random data
+     *
      * @return stdClass
      */
     public function random(): StdClass
@@ -65,6 +71,8 @@ abstract class Data
     }
 
     /**
+     * search for data
+     *
      * @param string $name
      * @param bool $isCaseInsensitive
      * @param bool $withAccent

@@ -23,6 +23,8 @@ class Territoire extends Data
     }
 
     /**
+     * get territoires by province id
+     *
      * @param int $province_id
      * @return array
      */

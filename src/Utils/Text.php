@@ -17,6 +17,8 @@ namespace DRCData\Utils;
 class Text
 {
     /**
+     * Replace accents letters with the non-accent corresponding one
+     *
      * @param string $string
      * @return string
      */
