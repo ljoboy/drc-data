@@ -10,9 +10,16 @@
 
 namespace DRCData\Utils;
 
-
+/**
+ * Class Text
+ * @package DRCData\Utils
+ */
 class Text
 {
+    /**
+     * @param string $string
+     * @return string
+     */
     static function replaceAccents(string $string): string
     {
 

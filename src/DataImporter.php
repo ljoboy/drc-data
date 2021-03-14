@@ -10,7 +10,10 @@
 
 namespace DRCData;
 
-
+/**
+ * Class DataImporter
+ * @package DRCData
+ */
 class DataImporter
 {
     /**

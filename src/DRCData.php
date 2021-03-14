@@ -10,7 +10,10 @@
 
 namespace DRCData;
 
-
+/**
+ * Class DRCData
+ * @package DRCData
+ */
 class DRCData
 {
     public function __construct()

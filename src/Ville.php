@@ -10,7 +10,10 @@
 
 namespace DRCData;
 
-
+/**
+ * Class Ville
+ * @package DRCData
+ */
 class Ville extends Data
 {
     public function __construct()

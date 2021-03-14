@@ -19,7 +19,13 @@ use stdClass;
  */
 abstract class Data
 {
+    /**
+     * @var array
+     */
     protected $datas = [];
+    /**
+     * @var DataImporter
+     */
     protected $importer;
 
     public function __construct()

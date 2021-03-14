@@ -10,7 +10,10 @@
 
 namespace DRCData;
 
-
+/**
+ * Class Territoire
+ * @package DRCData
+ */
 class Territoire extends Data
 {
     public function __construct()

@@ -13,6 +13,10 @@ namespace DRCData;
 
 use DRCData\Utils\Text;
 
+/**
+ * Class ZoneSante
+ * @package DRCData
+ */
 class ZoneSante extends Data
 {
     public function __construct()
@@ -21,6 +25,10 @@ class ZoneSante extends Data
         $this->datas = $this->importer->zone_santes();
     }
 
+    /**
+     * @param string $province_name
+     * @return array
+     */
     public function byProvinceName(string $province_name): array
     {
         $zones = [];
