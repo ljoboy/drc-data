@@ -25,12 +25,16 @@ abstract class Data
     protected $datas = [];
 
     /**
-     * Data constructor.
-     * @param string $filename
+     * @var string;
      */
-    public function __construct(string $filename)
+    protected $filename;
+
+    /**
+     * Data constructor.
+     */
+    public function __construct()
     {
-        $this->importer($filename);
+        $this->importer($this->filename);
     }
 
     /**
