@@ -16,10 +16,17 @@ namespace DRCData;
  */
 class Territoire extends Data
 {
+    /**
+     * @var string
+     */
+    protected $filename = 'territoires';
+
+    /**
+     * Territoire constructor.
+     */
     public function __construct()
     {
         parent::__construct();
-        $this->datas = $this->importer->territoires();
     }
 
     /**
