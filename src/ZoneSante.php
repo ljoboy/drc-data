@@ -19,10 +19,16 @@ use DRCData\Utils\Text;
  */
 class ZoneSante extends Data
 {
+    /**
+     * @var string
+     */
+    protected $filename = 'zonesante_pop2020';
+    /**
+     * ZoneSante constructor.
+     */
     public function __construct()
     {
         parent::__construct();
-        $this->datas = $this->importer->zone_santes();
     }
 
     /**
