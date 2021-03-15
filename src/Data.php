@@ -23,14 +23,26 @@ abstract class Data
      * @var array
      */
     protected $datas = [];
-    /**
-     * @var DataImporter
-     */
-    protected $importer;
 
-    public function __construct()
+    /**
+     * Data constructor.
+     * @param string $filename
+     */
+    public function __construct(string $filename)
     {
-        $this->importer = new DataImporter();
+        $this->importer($filename);
+    }
+
+    /**
+     * Import data from file and return it like an array of Object
+     *
+     * @param string $filename
+     * @return void
+     */
+    private function importer(string $filename): void
+    {
+        $file_contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "$filename.json");
+        $this->datas = json_decode($file_contents, false);
     }
 
     /**
