@@ -19,5 +19,8 @@
             "email": "jonathanyombo@gmail.com"
         }
     ],
-    "minimum-stability": "beta"
+    "minimum-stability": "beta",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }
