@@ -16,10 +16,16 @@ namespace DRCData;
  */
 class Ville extends Data
 {
+    /**
+     * @var string
+     */
+    protected $filename = 'villes';
+    /**
+     * Ville constructor.
+     */
     public function __construct()
     {
         parent::__construct();
-        $this->datas = $this->importer->villes();
     }
 
     /**
