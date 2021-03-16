@@ -25,6 +25,8 @@ abstract class Data
     protected $datas = [];
 
     /**
+     * json filename without extension
+     *
      * @var string;
      */
     protected $filename;
