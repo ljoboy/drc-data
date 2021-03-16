@@ -35,6 +35,14 @@ class TextTest extends TestCase
     {
         $this->assertEquals(123, Text::replaceAccents(123));
         $this->assertEquals(12.3, Text::replaceAccents(12.3));
+        $this->assertEquals(2/3, Text::replaceAccents(2/3));
+    }
+
+
+    public function testWithBoolean()
+    {
+        $this->assertEquals(true, Text::replaceAccents(true));
+        $this->assertEquals(false, Text::replaceAccents(false));
     }
 
     public function testWithArray()
