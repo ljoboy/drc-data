@@ -24,4 +24,9 @@ class TextTest extends TestCase
     {
         $this->assertEquals('girlfriend', Text::replaceAccents('girlfriend'));
     }
+
+    public function testWithInteger()
+    {
+        $this->assertEqualsCanonicalizing(123, Text::replaceAccents(123));
+    }
 }
