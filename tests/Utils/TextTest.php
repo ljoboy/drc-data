@@ -12,14 +12,15 @@ namespace Utils;
 
 use DRCData\Utils\Text;
 use PHPUnit\Framework\TestCase;
+use TypeError;
 
 class TextTest extends TestCase
 {
     public function testWordWithAccent()
     {
-        $this->assertEquals("eleve", Text::replaceAccents("élève"));
-        $this->assertEquals("Coeur", Text::replaceAccents("Cœur"));
-        $this->assertEquals("HETEROGENEITE", Text::replaceAccents("HÉTÉROGÉNÉITÉ"));
+        $this->assertEquals('eleve', Text::replaceAccents("élève"));
+        $this->assertEquals('Coeur', Text::replaceAccents("Cœur"));
+        $this->assertEquals('HETEROGENEITE', Text::replaceAccents("HÉTÉROGÉNÉITÉ"));
     }
 
     public function testWordWithoutAccent()
@@ -33,5 +34,11 @@ class TextTest extends TestCase
     {
         $this->assertEquals(123, Text::replaceAccents(123));
         $this->assertEquals(12.3, Text::replaceAccents(12.3));
+    }
+
+    public function testWithArray()
+    {
+        $this->expectException(TypeError::class);
+        Text::replaceAccents(['word', 'àccènt']);
     }
 }
