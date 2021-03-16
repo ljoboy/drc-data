@@ -19,4 +19,9 @@ class TextTest extends TestCase
     {
         $this->assertEquals("eleve", Text::replaceAccents("élève"));
     }
+
+    public function testWordWithoutAccent()
+    {
+        $this->assertEquals('girlfriend', Text::replaceAccents('girlfriend'));
+    }
 }
