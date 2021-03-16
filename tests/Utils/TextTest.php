@@ -15,5 +15,8 @@ use PHPUnit\Framework\TestCase;
 
 class TextTest extends TestCase
 {
-
+    public function testWordWithAccent()
+    {
+        $this->assertEquals("eleve", Text::replaceAccents("élève"));
+    }
 }
