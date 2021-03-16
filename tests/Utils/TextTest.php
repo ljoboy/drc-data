@@ -12,6 +12,7 @@ namespace Utils;
 
 use DRCData\Utils\Text;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 use TypeError;
 
 class TextTest extends TestCase
@@ -40,5 +41,11 @@ class TextTest extends TestCase
     {
         $this->expectException(TypeError::class);
         Text::replaceAccents(['word', 'àccènt']);
+    }
+
+    public function testWithObject()
+    {
+        $this->expectException(TypeError::class);
+        Text::replaceAccents(new StdClass());
     }
 }
