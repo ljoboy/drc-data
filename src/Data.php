@@ -36,19 +36,19 @@ abstract class Data
      */
     public function __construct()
     {
-        $this->importer($this->filename);
+        $this->datas = $this->importer($this->filename);
     }
 
     /**
      * Import data from file and return it like an array of Object
      *
      * @param string $filename
-     * @return void
+     * @return array
      */
-    private function importer(string $filename): void
+    private function importer(string $filename): array
     {
         $file_contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "$filename.json");
-        $this->datas = json_decode($file_contents, false);
+        return json_decode($file_contents, false);
     }
 
     /**
