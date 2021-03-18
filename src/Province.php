@@ -10,6 +10,7 @@
 
 namespace DRCData;
 
+use Exception;
 use stdClass;
 
 /**
@@ -19,16 +20,12 @@ use stdClass;
 class Province extends Data
 {
     /**
-     * @var string
-     */
-    protected $filename = 'provinces';
-
-    /**
      * Province constructor.
+     * @throws Exception
      */
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('provinces');
     }
 
     /**
@@ -39,7 +36,7 @@ class Province extends Data
      */
     public function getById(int $id): ?StdClass
     {
-        foreach ($this->provinces as $province) {
+        foreach ($this->datas as $province) {
             if ($province->id === $id) {
                 return $province;
             }

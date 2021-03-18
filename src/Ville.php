@@ -10,6 +10,8 @@
 
 namespace DRCData;
 
+use Exception;
+
 /**
  * Class Ville
  * @package DRCData
@@ -17,15 +19,12 @@ namespace DRCData;
 class Ville extends Data
 {
     /**
-     * @var string
-     */
-    protected $filename = 'villes';
-    /**
      * Ville constructor.
+     * @throws Exception
      */
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('villes');
     }
 
     /**

@@ -12,6 +12,7 @@ namespace DRCData;
 
 
 use DRCData\Utils\Text;
+use Exception;
 
 /**
  * Class ZoneSante
@@ -20,15 +21,12 @@ use DRCData\Utils\Text;
 class ZoneSante extends Data
 {
     /**
-     * @var string
-     */
-    protected $filename = 'zonesante_pop2020';
-    /**
      * ZoneSante constructor.
+     * @throws Exception
      */
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('zonesante_pop2020');
     }
 
     /**
