@@ -11,6 +11,7 @@
 namespace DRCData;
 
 use DRCData\Utils\Text;
+use Exception;
 use stdClass;
 
 /**
@@ -24,19 +25,15 @@ abstract class Data
      */
     protected $datas = [];
 
-    /**
-     * json filename without extension
-     *
-     * @var string;
-     */
-    protected $filename;
 
     /**
      * Data constructor.
+     * @param string $filename
+     * @throws Exception
      */
-    public function __construct()
+    public function __construct(string $filename)
     {
-        $this->datas = $this->importer($this->filename);
+        $this->datas = $this->importer($filename);
     }
 
     /**
@@ -44,11 +41,17 @@ abstract class Data
      *
      * @param string $filename
      * @return array
+     * @throws Exception
      */
     private function importer(string $filename): array
     {
         $file_contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "$filename.json");
-        return json_decode($file_contents, false);
+
+        if ($file_contents === false) {
+            throw new Exception("Le fichier $filename n'existe pas");
+        } else {
+            return json_decode($file_contents, false);
+        }
     }
 
     /**
@@ -96,7 +99,7 @@ abstract class Data
      * @param bool $withAccent
      * @return array
      */
-    public function search(string $name,bool $isCaseInsensitive = true, bool $withAccent = true): array
+    public function search(string $name, bool $isCaseInsensitive = true, bool $withAccent = true): array
     {
         $datas = [];
 
