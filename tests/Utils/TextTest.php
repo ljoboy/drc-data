@@ -15,20 +15,27 @@ use PHPUnit\Framework\TestCase;
 use stdClass;
 use TypeError;
 
-class TextTest extends TestCase
+/**
+ * Class TextTest
+ * @package Utils
+ */
+final class TextTest extends TestCase
 {
     public function testWordWithAccent()
     {
-        $this->assertEquals('eleve', Text::replaceAccents("élève"));
-        $this->assertEquals('Coeur', Text::replaceAccents("Cœur"));
-        $this->assertEquals('HETEROGENEITE', Text::replaceAccents("HÉTÉROGÉNÉITÉ"));
+        $this->assertSame('eleve', Text::replaceAccents("élève"));
+        $this->assertSame('Coeur', Text::replaceAccents("Cœur"));
+        $this->assertSame('HETEROGENEITE', Text::replaceAccents("HÉTÉROGÉNÉITÉ"));
     }
 
+    /**
+     *
+     */
     public function testWordWithoutAccent()
     {
-        $this->assertEquals('girlfriend', Text::replaceAccents('girlfriend'));
-        $this->assertEquals('Waterproof', Text::replaceAccents('Waterproof'));
-        $this->assertEquals('STATE', Text::replaceAccents('STATE'));
+        $this->assertSame('girlfriend', Text::replaceAccents('girlfriend'));
+        $this->assertSame('Waterproof', Text::replaceAccents('Waterproof'));
+        $this->assertSame('STATE', Text::replaceAccents('STATE'));
     }
 
     public function testWithNumber()
