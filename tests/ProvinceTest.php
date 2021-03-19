@@ -11,5 +11,21 @@ use PHPUnit\Framework\TestCase;
 
 class ProvinceTest extends TestCase
 {
+    /**
+     * @var Province
+     */
+    public $province;
 
+    /**
+     * @before
+     */
+    public function setProvince(): void
+    {
+        $this->province = new Province();
+    }
+
+    public function testGetAllMethod()
+    {
+        $this->assertIsArray($this->province->getAll());
+    }
 }
