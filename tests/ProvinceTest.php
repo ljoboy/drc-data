@@ -59,9 +59,15 @@ class ProvinceTest extends TestCase
         $province = $this->province->getById(new StdClass());
     }
 
-    public function testGetByNameWithGoodParam()
+    public function testGetByNameWithGoodLowerCaseParam()
     {
-        $province = $this->province->getByName('Lomami');
+        $province = $this->province->getByName('lomami');
+        $this->assertIsObject($province);
+    }
+
+    public function testGetByNameWithGoodLWithAccentParam()
+    {
+        $province = $this->province->getByName('Kasaï');
         $this->assertIsObject($province);
     }
 }
