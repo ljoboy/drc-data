@@ -75,7 +75,8 @@ abstract class Data
         $name = mb_strtolower(Text::replaceAccents($name));
 
         foreach ($this->datas as $data) {
-            if ($data->name === $name) {
+            $data_name = mb_strtolower(Text::replaceAccents($data->name));
+            if ($data_name === $name) {
                 return $data;
             }
         }
