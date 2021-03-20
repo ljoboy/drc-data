@@ -55,7 +55,7 @@ abstract class Data
     }
 
     /**
-     * get all datas
+     * get all data
      *
      * @return array
      */
@@ -72,6 +72,8 @@ abstract class Data
      */
     public function getByName(string $name): ?StdClass
     {
+        $name = mb_strtolower(Text::replaceAccents($name));
+
         foreach ($this->datas as $data) {
             if ($data->name === $name) {
                 return $data;
