@@ -94,4 +94,10 @@ class ProvinceTest extends TestCase
         $this->expectException(TypeError::class);
         $province = $this->province->getByName([123, 'lubumbahsi']);
     }
+
+    public function testGetByNameWithBadParamObject()
+    {
+        $this->expectException(TypeError::class);
+        $province = $this->province->getByName(new StdClass());
+    }
 }
