@@ -88,4 +88,10 @@ class ProvinceTest extends TestCase
         $province = $this->province->getByName(123);
         $this->assertNull($province);
     }
+
+    public function testGetByNameWithBadParamArray()
+    {
+        $this->expectException(TypeError::class);
+        $province = $this->province->getByName([123, 'lubumbahsi']);
+    }
 }
