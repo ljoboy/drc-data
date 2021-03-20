@@ -65,9 +65,10 @@ class ProvinceTest extends TestCase
         $this->assertIsObject($province);
     }
 
-    public function testGetByNameWithGoodLWithAccentParam()
+    public function testGetByNameWithGoodAccentParam()
     {
         $province = $this->province->getByName('Kasaï');
         $this->assertIsObject($province);
     }
+
 }
