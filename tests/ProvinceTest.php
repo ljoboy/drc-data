@@ -107,6 +107,12 @@ class ProvinceTest extends TestCase
         $province = $this->province->getByName(new StdClass());
     }
 
+    public function testGetByNameWithoutParam()
+    {
+        $this->expectException(ArgumentCountError::class);
+        $province = $this->province->getByName();
+    }
+
     public function testGetRandomProvince()
     {
         $this->assertIsObject($this->province->random());
