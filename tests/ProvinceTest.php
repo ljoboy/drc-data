@@ -24,8 +24,16 @@ class ProvinceTest extends TestCase
         $this->province = new Province();
     }
 
-    public function testGetAllMethod()
+    public function testGetAllMethod(): void
     {
         $this->assertIsArray($this->province->getAll());
     }
+
+    public function testGetByIdWithAGoodId(): void
+    {
+        $this->assertIsObject($this->province->getById(6));
+        $this->assertIsObject($this->province->getById(1));
+        $this->assertIsObject($this->province->getById(10));
+    }
+
 }
