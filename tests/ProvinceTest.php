@@ -44,9 +44,13 @@ class ProvinceTest extends TestCase
     public function testGetByIdWithABadTypeId()
     {
         $this->expectException(TypeError::class);
-        $province1 = $this->province->getById('just');
-        $province2 = $this->province->getById([5, 4]);
+        $province = $this->province->getById([5, 4]);
     }
 
+    public function testGetByIdWithABadTypeStringId()
+    {
+        $this->expectException(TypeError::class);
+        $province = $this->province->getById('just');
+    }
 
 }
