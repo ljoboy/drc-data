@@ -59,6 +59,12 @@ class ProvinceTest extends TestCase
         $province = $this->province->getById(new StdClass());
     }
 
+    public function testGetByIdWithoutParam()
+    {
+        $this->expectException(ArgumentCountError::class);
+        $province = $this->province->getById();
+    }
+
     public function testGetByNameWithGoodLowerCaseParam()
     {
         $province = $this->province->getByName('lomami');
