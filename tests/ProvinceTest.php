@@ -77,4 +77,9 @@ class ProvinceTest extends TestCase
         $this->assertIsObject($province);
     }
 
+    public function testGetByNameWithBadParamString()
+    {
+        $province = $this->province->getByName('jolie');
+        $this->assertNull($province);
+    }
 }
