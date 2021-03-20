@@ -41,4 +41,12 @@ class ProvinceTest extends TestCase
         $this->assertNull($this->province->getById(600));
     }
 
+    public function testGetByIdWithABadTypeId()
+    {
+        $this->expectException(TypeError::class);
+        $province1 = $this->province->getById('just');
+        $province2 = $this->province->getById([5, 4]);
+    }
+
+
 }
