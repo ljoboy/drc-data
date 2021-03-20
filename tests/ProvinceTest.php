@@ -71,4 +71,10 @@ class ProvinceTest extends TestCase
         $this->assertIsObject($province);
     }
 
+    public function testGetByNameWithGoodUpperCaseParam()
+    {
+        $province = $this->province->getByName('EQUATEUR');
+        $this->assertIsObject($province);
+    }
+
 }
