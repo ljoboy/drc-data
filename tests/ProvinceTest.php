@@ -53,6 +53,12 @@ class ProvinceTest extends TestCase
         $province = $this->province->getById('just');
     }
 
+    public function testGetByIdWithABadTypeObjectId()
+    {
+        $this->expectException(TypeError::class);
+        $province = $this->province->getById(new StdClass());
+    }
+
     public function testGetByNameWithGoodParam()
     {
         $province = $this->province->getByName('Lomami');
