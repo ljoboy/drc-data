@@ -82,4 +82,10 @@ class ProvinceTest extends TestCase
         $province = $this->province->getByName('jolie');
         $this->assertNull($province);
     }
+
+    public function testGetByNameWithBadParamNumber()
+    {
+        $province = $this->province->getByName(123);
+        $this->assertNull($province);
+    }
 }
