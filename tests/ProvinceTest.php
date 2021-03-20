@@ -36,4 +36,9 @@ class ProvinceTest extends TestCase
         $this->assertIsObject($this->province->getById(10));
     }
 
+    public function testGetByIdWithABadId()
+    {
+        $this->assertNull($this->province->getById(600));
+    }
+
 }
