@@ -53,4 +53,9 @@ class ProvinceTest extends TestCase
         $province = $this->province->getById('just');
     }
 
+    public function testGetByNameWithGoodParam()
+    {
+        $province = $this->province->getByName('Lomami');
+        $this->assertIsObject($province);
+    }
 }
