@@ -117,4 +117,9 @@ class ProvinceTest extends TestCase
     {
         $this->assertIsObject($this->province->random());
     }
+
+    public function testSearchWithGoodParam()
+    {
+        $this->assertIsArray($this->province->search('asa'));
+    }
 }
