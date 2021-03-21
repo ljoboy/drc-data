@@ -24,4 +24,10 @@ class TerritoireTest extends TestCase
         $this->territoire = new Territoire();
         $this->assertIsObject($this->territoire);
     }
+
+    public function testGetTerritoireByProvinceIdWithGoodParam()
+    {
+        $this->assertIsArray($this->territoire->byProvinceId(5));
+        $this->assertNotEmpty($this->territoire->byProvinceId(5));
+    }
 }
