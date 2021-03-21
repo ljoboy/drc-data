@@ -11,5 +11,17 @@ use PHPUnit\Framework\TestCase;
 
 class TerritoireTest extends TestCase
 {
+    /**
+     * @var Territoire
+     */
+    public $territoire;
 
+    /**
+     * @before
+     */
+    public function testSetTerritoire(): void
+    {
+        $this->territoire = new Territoire();
+        $this->assertIsObject($this->territoire);
+    }
 }
