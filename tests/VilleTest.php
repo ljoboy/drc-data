@@ -11,5 +11,17 @@ use PHPUnit\Framework\TestCase;
 
 class VilleTest extends TestCase
 {
+    /**
+     * @var Ville
+     */
+    public $ville;
 
+    /**
+     * @before
+     */
+    public function testSetVille()
+    {
+        $this->ville = new Ville();
+        $this->assertIsObject($this->ville);
+    }
 }
