@@ -24,4 +24,10 @@ class VilleTest extends TestCase
         $this->ville = new Ville();
         $this->assertIsObject($this->ville);
     }
+
+    public function testGetVilleByProvinceIdWithGoodParam()
+    {
+        $this->assertIsArray($this->ville->byProvinceId(5));
+        $this->assertNotEmpty($this->ville->byProvinceId(5));
+    }
 }
