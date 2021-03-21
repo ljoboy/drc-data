@@ -127,4 +127,10 @@ class ProvinceTest extends TestCase
     {
         $this->assertEmpty($this->province->search('azerty'));
     }
+
+    public function testSearchWithoutParam()
+    {
+        $this->expectException(ArgumentCountError::class);
+        $this->province->search();
+    }
 }
