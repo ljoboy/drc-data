@@ -27,6 +27,7 @@ class ProvinceTest extends TestCase
     public function testGetAllMethod(): void
     {
         $this->assertIsArray($this->province->getAll());
+        $this->assertNotEmpty($this->province->getAll());
     }
 
     public function testGetByIdWithAGoodId(): void
@@ -85,14 +86,12 @@ class ProvinceTest extends TestCase
 
     public function testGetByNameWithBadParamString()
     {
-        $province = $this->province->getByName('jolie');
-        $this->assertNull($province);
+        $this->assertNull($this->province->getByName('jolie'));
     }
 
     public function testGetByNameWithBadParamNumber()
     {
-        $province = $this->province->getByName(123);
-        $this->assertNull($province);
+        $this->assertNull($this->province->getByName(123));
     }
 
     public function testGetByNameWithBadParamArray()
@@ -121,5 +120,11 @@ class ProvinceTest extends TestCase
     public function testSearchWithGoodParam()
     {
         $this->assertIsArray($this->province->search('asa'));
+        $this->assertNotEmpty($this->province->search('asa'));
+    }
+
+    public function testSearchWithBadParamString()
+    {
+        $this->assertEmpty($this->province->search('azerty'));
     }
 }
