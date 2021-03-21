@@ -19,9 +19,10 @@ class ProvinceTest extends TestCase
     /**
      * @before
      */
-    public function setProvince(): void
+    public function testSetProvince(): void
     {
         $this->province = new Province();
+        $this->assertIsObject($this->province);
     }
 
     public function testGetAllMethod(): void
