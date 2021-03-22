@@ -30,4 +30,9 @@ class VilleTest extends TestCase
         $this->assertIsArray($this->ville->byProvinceId(5));
         $this->assertNotEmpty($this->ville->byProvinceId(5));
     }
+
+    public function testGetVilleByProvinceIdWithBadParam()
+    {
+        $this->assertEmpty($this->ville->byProvinceId(500));
+    }
 }
