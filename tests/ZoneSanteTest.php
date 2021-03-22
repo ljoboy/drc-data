@@ -11,5 +11,18 @@ use PHPUnit\Framework\TestCase;
 
 class ZoneSanteTest extends TestCase
 {
+    /**
+     * @var ZoneSante
+     */
+    public $zoneSante;
+
+    /**
+     * @before
+     */
+    public function testSetZoneSante()
+    {
+        $this->zoneSante = new ZoneSante();
+        $this->assertIsObject($this->zoneSante);
+    }
 
 }
