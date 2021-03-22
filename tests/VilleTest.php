@@ -23,6 +23,7 @@ class VilleTest extends TestCase
     {
         $this->ville = new Ville();
         $this->assertIsObject($this->ville);
+        $this->assertNotInstanceOf(Exception::class, $this->ville);
     }
 
     public function testGetVilleByProvinceIdWithGoodParam()

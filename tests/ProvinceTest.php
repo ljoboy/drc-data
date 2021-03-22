@@ -23,6 +23,7 @@ class ProvinceTest extends TestCase
     {
         $this->province = new Province();
         $this->assertIsObject($this->province);
+        $this->assertNotInstanceOf(Exception::class, $this->province);
     }
 
     public function testGetAllMethod(): void

@@ -23,6 +23,7 @@ class ZoneSanteTest extends TestCase
     {
         $this->zoneSante = new ZoneSante();
         $this->assertIsObject($this->zoneSante);
+        $this->assertNotInstanceOf(Exception::class, $this->zoneSante);
     }
 
     public function testGetByProvinceNameGoodParam()

@@ -23,6 +23,7 @@ class TerritoireTest extends TestCase
     {
         $this->territoire = new Territoire();
         $this->assertIsObject($this->territoire);
+        $this->assertNotInstanceOf(Exception::class, $this->territoire);
     }
 
     public function testGetTerritoireByProvinceIdWithGoodParam()
