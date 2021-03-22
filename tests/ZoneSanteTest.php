@@ -25,4 +25,11 @@ class ZoneSanteTest extends TestCase
         $this->assertIsObject($this->zoneSante);
     }
 
+    public function testGetByProvinceNameGoodParam()
+    {
+        $zonesantes = $this->zoneSante->byProvinceName('kinshasa');
+        $this->assertIsArray($zonesantes);
+        $this->assertNotEmpty($zonesantes);
+    }
+
 }
