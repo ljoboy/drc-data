@@ -47,4 +47,10 @@ class VilleTest extends TestCase
         $this->expectException(TypeError::class);
         $this->ville->byProvinceId(new StdClass());
     }
+
+    public function testGetVilleByProvinceIdWithBadParamArray()
+    {
+        $this->expectException(TypeError::class);
+        $this->ville->byProvinceId([2,4]);
+    }
 }
