@@ -35,4 +35,10 @@ class VilleTest extends TestCase
     {
         $this->assertEmpty($this->ville->byProvinceId(500));
     }
+
+    public function testGetVilleByProvinceIdWithBadParamString()
+    {
+        $this->expectException(TypeError::class);
+        $this->ville->byProvinceId('jo');
+    }
 }
