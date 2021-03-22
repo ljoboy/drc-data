@@ -91,7 +91,7 @@ abstract class Data
      */
     public function random(): StdClass
     {
-        return $this->datas[rand(0, count($this->datas))];
+        return $this->datas[rand(0, (count($this->datas)-1))];
     }
 
     /**
