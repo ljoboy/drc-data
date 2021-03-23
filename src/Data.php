@@ -45,13 +45,13 @@ abstract class Data
      */
     private function importer(string $filename): array
     {
-        $file_contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "$filename.json");
-
-        if ($file_contents === false) {
+        try {
+            $file_contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "$filename.json");
+        } catch (Exception $e) {
             throw new Exception("Le fichier $filename n'existe pas");
-        } else {
-            return json_decode($file_contents, false);
         }
+
+        return json_decode($file_contents, false);
     }
 
     /**
@@ -91,7 +91,7 @@ abstract class Data
      */
     public function random(): StdClass
     {
-        return $this->datas[rand(0, (count($this->datas)-1))];
+        return $this->datas[rand(0, (count($this->datas) - 1))];
     }
 
     /**
