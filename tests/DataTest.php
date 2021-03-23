@@ -9,7 +9,18 @@
 use DRCData\Data;
 use PHPUnit\Framework\TestCase;
 
+class FakeDataImplementor extends Data {
+    public function __construct()
+    {
+        parent::__construct('fakefilename');
+    }
+}
+
 class DataTest extends TestCase
 {
-
+    public function testSetFakeDataImplementor()
+    {
+        $this->expectException(Exception::class);
+        $fakeData = new FakeDataImplementor();
+    }
 }
