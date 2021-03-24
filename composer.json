@@ -2,6 +2,14 @@
     "name": "ljoboy/drc-data",
     "description": "Our goal is to create solutions for our country (DRC). based on the reality of the situation, this repository will contain the basic data for the creation of any solution.",
     "type": "library",
+    "keywords": [
+        "drc",
+        "rdc"
+    ],
+    "homepage": "https://github.com/ljoboy/drc-data/",
+    "support": {
+        "issues": "https://github.com/ljoboy/drc-data/issues"
+    },
     "require": {
         "php": ">=7.1",
         "ext-json": "*",
@@ -16,11 +24,17 @@
     "authors": [
         {
             "name": "Dark Angel",
-            "email": "jonathanyombo@gmail.com"
+            "email": "jonathanyombo@gmail.com",
+            "role": "lead"
         }
     ],
     "minimum-stability": "beta",
     "require-dev": {
         "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.0-dev"
+        }
     }
 }
