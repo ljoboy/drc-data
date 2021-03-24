@@ -15,7 +15,8 @@ use Exception;
 use stdClass;
 
 /**
- * Class Data
+ * An abstract representation of what should have a Data class
+ *
  * @package DRCData
  */
 abstract class Data
@@ -37,7 +38,7 @@ abstract class Data
     }
 
     /**
-     * Import data from file and return it like an array of Object
+     * Import data from file and return it like an array of StdClass Object
      *
      * @param string $filename
      * @return array
@@ -55,7 +56,7 @@ abstract class Data
     }
 
     /**
-     * get all data
+     * get all data as array of StdClass Object
      *
      * @return array
      */
@@ -65,7 +66,7 @@ abstract class Data
     }
 
     /**
-     * get data by name
+     * get data by name and return it like an StdClass Object or null if name not exist
      *
      * @param string $name
      * @return stdClass|null
@@ -85,7 +86,7 @@ abstract class Data
     }
 
     /**
-     * get random data
+     * get random data and return it as an object
      *
      * @return stdClass
      */
@@ -95,7 +96,7 @@ abstract class Data
     }
 
     /**
-     * search for data
+     * search for data by name (with some optional filter) and return result as an array
      *
      * @param string $name
      * @param bool $isCaseInsensitive
