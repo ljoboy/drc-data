@@ -30,7 +30,7 @@ class ZoneSante extends Data
     }
 
     /**
-     * get zoneSante by province id
+     * get zoneSante by province name and return result as an array
      *
      * @param string $province_name
      * @return array

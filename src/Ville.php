@@ -28,7 +28,7 @@ class Ville extends Data
     }
 
     /**
-     * get ville by province id
+     * get ville by province id and return result as an array
      *
      * @param int $province_id
      * @return array

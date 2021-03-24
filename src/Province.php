@@ -14,7 +14,9 @@ use Exception;
 use stdClass;
 
 /**
- * Class Province
+ * Operate with Provinces
+ *
+ * @author Dark Angel
  * @package DRCData
  */
 class Province extends Data
@@ -29,7 +31,7 @@ class Province extends Data
     }
 
     /**
-     * get province's by id
+     * get province's by id and return it as an object of StdClass or null if id not exist
      *
      * @param int $id
      * @return stdClass|null
