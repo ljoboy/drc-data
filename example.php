@@ -7,10 +7,17 @@
  */
 
 use DRCData\Province;
+use DRCData\Territoire;
 
 include 'vendor/autoload.php';
 
 $province = new Province();
+$territoire = new Territoire();
 
 echo '<pre>';
-var_dump($province->getByName('Kasaï'));
+var_dump($province->getAll());
+
+
+var_dump($territoire->random());
+
+
